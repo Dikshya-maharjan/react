@@ -1,59 +1,46 @@
-/* Adopt.css */
-body {
-  font-family: Arial, sans-serif;
+/* General Reset for Affected Elements */
+.pet-container, .pet-card, .heading, .adoption-form-page, .adoption-form {
   margin: 0;
   padding: 0;
-  background-color: #f7f7f7;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Arial', sans-serif;
 }
 
-/* Navigation Bar */
-
-/* Footer */
-.footer {
-  background: linear-gradient(to right, #1a535c, #1a6f78); /* Teal gradient matching the image */
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  border-radius: 15px 15px 0 0;
-  margin-top: 50px;
-}
-
-.footer {
-    height:9vh;
-    background-color: #333;
-    color: white;
-    text-align: center;
-
-    font-size: 14px;
-  }
-  
-/* Adopt Page Specific Styles */
+/* Heading for Adopt Page */
 .heading {
   text-align: center;
-  margin: 40px 0;
-  font-size: 36px;
-  color: #333;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin: 20px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* Pet Container (3-Column Grid) */
 .pet-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Pet Card */
 .pet-card {
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  padding: 20px;
-  transition: transform 0.3s;
+  padding: 15px;
 }
 
 .pet-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .pet-img {
@@ -64,96 +51,337 @@ body {
 }
 
 .pet-card h3 {
-  font-size: 22px;
-  color: #333;
-  margin-top: 15px;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin: 10px 0;
+  font-weight: 500;
 }
 
 .pet-card p {
-  color: #666;
-  font-size: 16px;
-  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 15px;
 }
 
-.pet-card button {
-  padding: 10px 20px;
-  background-color: #f2a900;
-  color: white;
+/* Button Styles for Adopt Page */
+.adopt-btn, .adopted-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-.pet-card button:disabled {
-  background-color: #ccc;
+.adopt-btn {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.adopt-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+}
+
+.adopted-btn {
+  background-color: #95a5a6;
+  color: #fff;
   cursor: not-allowed;
 }
 
-.pet-card button:hover:not(:disabled) {
-  background-color: #d78e00;
+/* Adoption Form Page */
+.adoption-form-page {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Subtle Overlay for Form Background */
+.adoption-form-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  z-index: 1;
+}
+.adopt-form-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.form-box {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.form-box h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.3s border-color ease-in-out;
+}
+
+.form-box input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+}
+
+.form-box button {
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  margin: 8px 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-box button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.form-box button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.form-box button[type="button"] {
+  background-color: #ccc;
+  color: #333;
+}
+
+.form-box button[type="button"]:hover {
+  background-color: #bbb;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.adoption-form-page h2 {
+  font-size: 2rem;
+  color: #e74c3c;
+  margin-bottom: 25px;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.adoption-form {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+
+/* Form Fields with Floating Labels */
+.form-field {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.form-field label {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  font-size: 1rem;
+  color: #7f8c8d;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.form-field input:focus,
+.form-field input:not(:placeholder-shown) {
+  border-color: #e74c3c;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.2);
+}
+
+.form-field input:focus + label,
+.form-field input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 0.85rem;
+  color: #e74c3c;
+  background: #fff;
+  padding: 0 5px;
+  border-radius: 4px;
+}
+
+.error-msg {
+  display: block;
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Form Buttons */
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.submit-btn, .cancel-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
+}
+
+.cancel-btn {
+  background: linear-gradient(90deg, #7f8c8d, #6c7a89);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(127, 140, 141, 0.3);
+}
+
+.cancel-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(127, 140, 141, 0.4);
+}
+
+/* Fade-In Animation for Form */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .nav {
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  .nav ul {
-    margin-top: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .nav ul li {
-    margin-left: 15px;
+  .pet-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .heading {
-    font-size: 28px;
+    font-size: 2rem;
   }
 
-  .pet-container {
-    padding: 15px;
+  .adoption-form-page {
+    margin: 20px;
+    padding: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .logo {
-    font-size: 1.6rem;
-  }
-
-  .nav ul li a {
-    font-size: 1rem;
-    padding: 6px 12px;
-  }
-
-  .heading {
-    font-size: 24px;
+  .pet-container {
+    grid-template-columns: 1fr;
   }
 
   .pet-card {
-    padding: 15px;
+    padding: 10px;
   }
 
-  .pet-card h3 {
-    font-size: 18px;
+  .pet-img {
+    height: 150px;
   }
 
-  .pet-card p {
-    font-size: 14px;
+  .heading {
+    font-size: 1.8rem;
   }
 
-  .pet-card button {
-    font-size: 14px;
-    padding: 8px 16px;
+  .adoption-form-page h2 {
+    font-size: 1.6rem;
   }
 
-  .foot {
+  .form-field input {
+    padding: 10px;
+  }
+
+  .submit-btn, .cancel-btn {
+    padding: 10px;
     font-size: 0.9rem;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .submit-btn, .cancel-btn {
+    width: 100%;
   }
 }
