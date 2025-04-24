@@ -1,0 +1,223 @@
+/* General Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #fef6e4;
+  color: #1a1a1a;
+  line-height: 1.7;
+}
+
+/* Main Container */
+.main {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Navigation Bar */
+.nav {
+  height:10vh;
+  font-size: 18px;
+  background:linear-gradient(to right,#ff9e2c,#f9b05d);
+  color: black;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color:balck;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background 0.3s;
+}
+
+.nav li a:hover {
+  background-color:black;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 14px;
+}
+
+/* Mid Section */
+.mid-div {
+  text-align: center;
+  padding: 80px 0;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.mid-div h2 {
+  font-size: 3rem;
+  color: #ff6f61;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.photo img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.photo img:hover {
+  transform: scale(1.03);
+}
+
+/* Information Section */
+.information {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 50px 0;
+}
+
+.Meet, .adopt {
+  background: linear-gradient(135deg, #fff, #f8edeb);
+  padding: 35px;
+  border-radius: 15px;
+  border: none;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Meet:hover, .adopt:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.Meet h4, .adopt h4 {
+  font-size: 1.8rem;
+  color: #1a535c;
+  margin-bottom: 15px;
+}
+
+.Meet p, .adopt p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.findbtn {
+  border: none;
+  width:0px;
+}
+
+.findbtn a {
+  width:120px;
+  height:7vh;
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(45deg, #ff6f61, #ff9e2c);
+  color: #fff;
+  padding: 14px 30px;
+  border: 0px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 15px;
+  margin-left: -60px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.findbtn a:hover {
+  background: linear-gradient(45deg, #ff9e2c, #ff6f61);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.foot {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav ul {
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav ul li {
+    margin-left: 15px;
+  }
+
+  .mid-div h2 {
+    font-size: 2rem;
+  }
+
+  .photo img {
+    max-width: 90%;
+  }
+
+  .information {
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .nav ul li a {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+
+  .mid-div h2 {
+    font-size: 1.6rem;
+  }
+
+  .findbtn a {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .Meet h4, .adopt h4 {
+    font-size: 1.5rem;
+  }
+}
