@@ -10,7 +10,7 @@ function Adoption() {
     { id: 2, name: 'Kalu', desc: 'Loves running around.', image: 'injury2.jpg', adopted: false },
     { id: 3, name: 'Sheru', desc: 'Brave and loyal.', image: 'street2.jpg', adopted: false },
     { id: 4, name: 'Lucy', desc: 'Sweet and cuddly.', image: 'street1.jpg', adopted: false },
-    {id:5,name:"Leo",desc:"Energetic and ",image:'leo.jpg',adopted:false}
+    {id:5,name:"Leo",desc:"Energetic and playful",image:'leo.jpg',adopted:false}
   ]);
 
   function adoptPet(id) {
@@ -21,7 +21,8 @@ function Adoption() {
   }
 
   return (
-    <div>
+    <>
+    <div className='main'>
       <div className="nav">
         <div className="logo">PawCreation</div>
         <ul>
@@ -47,11 +48,11 @@ function Adoption() {
           </div>
         ))}
       </div>
-      
+      </div>
     <div className="footer">
     <p className="foot">&copy; 2025 Pet Adoption. Designed by PawCreations</p>
   </div>
-    </div>
+    </>
   );
 }
 

@@ -28,12 +28,12 @@ const Homepage = () => {
         <div className="information">
           
           <div className="Meet">
-            <button className="findbtn"><Link to='/donate'>Adopt</Link></button>
+            <button className="findbtn"><Link to='/adopt'>Adopt</Link></button>
             <h4>Adopt a Dog</h4>
             <p>Bring home a dog and fill your life with love</p>
           </div>
           <div className="adopt">
-            <button className="findbtn"><Link to='adopt'>Donate</Link></button>
+            <button className="findbtn"><Link to='/donate'>Donate</Link></button>
             <h4>Donate for Dog</h4>
             <p>Help a dog find hope — donate today and change a life.</p>
           </div>

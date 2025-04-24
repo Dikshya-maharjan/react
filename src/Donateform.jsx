@@ -40,6 +40,7 @@ const Donateform = () => {
         <h2>Donate to Save a Life</h2>
         <p>Your generous contribution helps provide food, shelter, and medical care for dogs in need.</p>
       </div>
+
       <div className="donate-form-container">
         <div className="donate-form">
           {["name", "email", "phone", "amount"].map((field) => (
@@ -59,6 +60,7 @@ const Donateform = () => {
               {errors[field] && <span className="error-msg">{errors[field]}</span>}
             </div>
           ))}
+
           <div className="form-field">
             <label htmlFor="message">Message (Optional)</label>
             <textarea
@@ -68,11 +70,21 @@ const Donateform = () => {
               onChange={handleChange}
             />
           </div>
-          <button type="button" className="submit-btn" onClick={handleSubmit}>Submit Donation</button>
+
+          <button type="button" className="submit-btn" onClick={handleSubmit}>
+            Submit Donation
+          </button>
         </div>
       </div>
-      <div className="footer">
-        <p className="foot">Copyright © 2025 Pet Adoption. Designed by PawCreations</p>
+
+      <div className="qr-code-container">
+        <h3>Scan this QR to Donate</h3>
+        <img
+          src="/esewa.jpg" // Path to the QR code screenshot you uploaded
+          alt="Donation QR Code"
+          className="qr-image"
+        />
+        <p>Scan this QR code with your phone to proceed with the donation.</p>
       </div>
     </div>
   );

@@ -1,0 +1,129 @@
+/* Contact Form Container */
+.contact-form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .contact-form-container h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .contact-form-container p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+  }
+  
+  /* Contact Form */
+  .contact-form {
+    padding: 20px;
+  }
+  
+  /* Form Fields */
+  .form-field {
+    margin-bottom: 20px;
+  }
+  
+  .form-field label {
+    display: block;
+    font-size: 1rem;
+    color: #34495e;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: #e74c3c;
+    box-shadow: 0 0 8px rgba(231, 76, 60, 0.2);
+  }
+  
+  .form-field textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  /* Error Messages */
+  .error-msg {
+    display: block;
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+  }
+  
+  .submit-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-form-container {
+      margin: 20px;
+      padding: 15px;
+    }
+  
+    .contact-form-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .contact-form {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-form-container h2 {
+      font-size: 1.6rem;
+    }
+  
+    .contact-form-container p {
+      font-size: 1rem;
+    }
+  
+    .form-field input,
+    .form-field textarea {
+      padding: 10px;
+    }
+  
+    .submit-btn {
+      padding: 12px;
+      font-size: 1rem;
+    }
+  }
